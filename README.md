@@ -15,3 +15,10 @@ try to reproduce [this error](https://github.com/Microsoft/react-native-code-pus
 ## tests in debug environment
 
     rake android:runfresh
+
+## trigger codepush update
+
+* skip the onboarding screens
+* select the settings-tab
+* click on DevOps => will start codepush
+
