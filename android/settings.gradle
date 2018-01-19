@@ -1,0 +1,24 @@
+rootProject.name = 'Minimal'
+include ':lottie-react-native'
+project(':lottie-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/lottie-react-native/lib/android')
+
+[
+ 'interactable/android',
+ 'code-push/android/app',
+ 'fabric/android',
+ 'config/android',
+ 'maps/lib/android',
+ 'vector-icons/android',
+ 'device-info/android',
+ 'navigation/android/app',
+ 'linear-gradient/android'
+].collect { it.split('/', 2) }.each {
+  def (module, path) = it
+  def name = "react-native-${module}"
+  def projectName = ":${name}"
+  def nodePath = "${rootProject.projectDir}/../node_modules/${name}/${path}"
+  include projectName
+  project(projectName).projectDir = file(nodePath)
+}
+
+include ':app'

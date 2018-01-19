@@ -1,0 +1,4 @@
+<resources>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">a522894a-d5b9-4042-b60e-3eb5fd5c089f</string>
+    <string name="app_name">Minimal</string>
+</resources>
